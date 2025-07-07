@@ -1,17 +1,26 @@
 import React from "react";
-import img1 from "../assets/images/blueMobile.jpg"
+import img1 from "../assets/images/blueMobile.jpg";
 
-function ProductCard() {
+function ProductCard(props) {
   return (
     <div className="card" style={{ width: "18rem" }}>
-      <img src={img1} className="card-img-top" alt="..." />
+      <img
+        src={props.product.img}
+        className="card-img-top"
+        style={{ height: "300px" }}
+        alt="..."
+      />
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card’s content.
-        </p>
-        <button className="btn btn-primary">Go somewhere</button>
+        <h5 className="card-title">{props.product.pName}</h5>
+        <h6 className="card-title">{props.product.price}</h6>
+        <p className="card-text">{props.product.dsec}</p>
+        <p>{props.product.isStock ? "-in stock" : "-out of stock"}</p>
+        <button
+          className="btn btn-primary"
+          disabled={!props.product.isStock}
+        >
+          Add to cart
+        </button>
       </div>
     </div>
   );
