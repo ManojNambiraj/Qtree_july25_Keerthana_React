@@ -18,6 +18,7 @@ function ProductCard(props) {
         <button
           className="btn btn-primary"
           disabled={!props.product.isStock}
+          onClick={() => {props.handleAddToCart(props.product);}}
         >
           Add to cart
         </button>
