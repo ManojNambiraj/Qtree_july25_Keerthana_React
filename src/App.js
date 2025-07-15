@@ -1,15 +1,11 @@
 // import React from 'react'
 // import ShopppingCart from './ShopppingCart'
-import UserManagement from './UserManagement'
+import CRUDApp from './CRUDApp'
 
 function App() {
   return (
     <div>
-      <UserManagement />
-      
-
-
-
+      <CRUDApp />
 
       {/* <ShopppingCart /> */}
     </div>
