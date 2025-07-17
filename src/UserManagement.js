@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function UserManagement() {
 
@@ -19,6 +20,9 @@ function UserManagement() {
 
   return (
     <div>
+      <Link to={"/create"} className="btn btn-primary m-4">
+        Create user
+      </Link>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -31,20 +35,18 @@ function UserManagement() {
           </tr>
         </thead>
         <tbody>
-            {
-               users.map((item) => {
-                return (
-                  <tr>
-                    <th scope="row">{item.id}</th>
-                    <td>{item.Name}</td>
-                    <td>{item.Age}</td>
-                    <td>{item.Email}</td>
-                    <td>{item.Mobile}</td>
-                    <td>{item.Password}</td>
-                  </tr>
-                );
-               }) 
-            }
+          {users.map((item) => {
+            return (
+              <tr>
+                <th scope="row">{item.id}</th>
+                <td>{item.Name}</td>
+                <td>{item.Age}</td>
+                <td>{item.Email}</td>
+                <td>{item.Mobile}</td>
+                <td>{item.Password}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
