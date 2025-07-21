@@ -1,68 +1,37 @@
-import React, { useState } from 'react'
-import { ReactApexChart } from "apexcharts";
+import React from "react";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+} from "recharts";
 
-function ChartsDemo() {
-    const [state, setState] = useState({
-      series: [
-        {
-          name: "Desktops",
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
-        },
-      ],
-      options: {
-        chart: {
-          height: 350,
-          type: "line",
-          zoom: {
-            enabled: false,
-          },
-        },
-        dataLabels: {
-          enabled: false,
-        },
-        stroke: {
-          curve: "straight",
-        },
-        title: {
-          text: "Product Trends by Month",
-          align: "left",
-        },
-        grid: {
-          row: {
-            colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
-            opacity: 0.5,
-          },
-        },
-        xaxis: {
-          categories: [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-          ],
-        },
-      },
-    });
+const data = [
+  { name: "Jan", students: 30 },
+  { name: "Feb", students: 45 },
+  { name: "Mar", students: 60 },
+  { name: "Apr", students: 40 },
+];
+
+const ChartsDemo = () => {
   return (
-    <div>
-      <div>
-        <div id="chart">
-          <ReactApexChart
-            options={state.options}
-            series={state.series}
-            type="line"
-            height={350}
-          />
-        </div>
-        <div id="html-dist"></div>
-      </div>
-    </div>
+    <BarChart
+      width={500}
+      height={300}
+      data={data}
+      margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Bar dataKey="students" fill="#8884d8" />
+    </BarChart>
   );
-}
+};
 
-export default ChartsDemo
+export default ChartsDemo;

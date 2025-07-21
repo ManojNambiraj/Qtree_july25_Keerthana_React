@@ -1,13 +1,18 @@
 // import React from 'react'
 // import ShopppingCart from './ShopppingCart'
-import CRUDApp from './CRUDApp'
+import ChartsDemo from './components/ChartsDemo'
+// import CRUDApp from './CRUDApp'
 
 function App() {
   return (
     <div>
-      <CRUDApp />
+      {/* <CRUDApp /> */}
+
+      <ChartsDemo />
 
       {/* <ShopppingCart /> */}
+
+      
     </div>
   )
 }
